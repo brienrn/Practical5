@@ -159,6 +159,7 @@
     <Compile Include="MyAccount\RoleManagement.aspx.designer.cs">
       <DependentUpon>RoleManagement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RolesManagement.aspx.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Maintenance\Web.config" />

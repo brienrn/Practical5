@@ -14,12 +14,14 @@ namespace Practical5
         {
             if (!IsPostBack) 
             {
-                lstRoles.DataSource = RoleServiceManager.GetAllRoles();
+                lstRoles.DataSource = Roles.GetAllRoles();
                 lstRoles.DataBind();
 
                 lstUsers.DataSource = Membership.GetAllUsers();
                 lstUsers.DataBind();
 
+                ddlRole.DataSource = Roles.GetAllRoles();
+                ddlRole.DataBind();
             }
 
         }
@@ -36,22 +38,44 @@ namespace Practical5
                 }
                 else {
                     Roles.CreateRole(roleName);
-                    lstRoles.DataSource = RoleServiceManager.GetAllRoles();
+                    lstRoles.DataSource = Roles.GetAllRoles();
                     lstRoles.DataBind();
+                    ddlRole.DataSource = Roles.GetAllRoles();
+                    ddlRole.DataBind();
                 }
                 //Display Error here
             }catch(Exception ex)
             {
                 //Display Error here
+                Response.Write(ex.ToString());
             }
         }
 
-        protected void btnAssignRoleToUser_Click(object sender, EventArgs e)
+        protected void btnAssignRole_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Roles.AddUserToRole(
+                    lstUsers.SelectedItem.Text,
+                    lstRoles.SelectedItem.Text);
+                lstUserRole.DataSource =
+                    Roles.GetRolesForUser(lstUsers.SelectedItem.Text);
+            }
+            catch(Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
             Roles.AddUserToRole(lstUsers.SelectedItem.Text,
             lstRoles.SelectedItem.Text);
 
            //TO Be continued
+        }
+
+        protected void btnGetRoleUsers_Click(object sender, EventArgs e)
+        {
+            lstUserRole.DataSource =
+                Roles.GetRolesForUser(ddlRole.SelectedValue);
+            lstUserRole.DataBind(); 
         }
     }
 }

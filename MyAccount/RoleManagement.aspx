@@ -10,8 +10,8 @@
     <form id="form1" runat="server">
         <div>
             Role:
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-&nbsp;<asp:Button ID="btnInsertRole" runat="server" OnClick="Button1_Click" Text="Insert Role" />
+            <asp:TextBox ID="txtRole" runat="server"></asp:TextBox>
+&nbsp;<asp:Button ID="btnInsertRole" runat="server" OnClick="btnInsertRole_Click" Text="Insert Role" />
             <br />
             <br />
             Role List:<br />
@@ -22,10 +22,16 @@
             <asp:ListBox ID="lstUsers" runat="server"></asp:ListBox>
             <br />
             <br />
-            <asp:Button ID="btnAssignRoleToUser" runat="server" OnClick="btnAssignRoleToUser_Click" Text="Assign Role to User" />
+            <asp:Button ID="btnAssignRole" runat="server" OnClick="btnAssignRole_Click" Text="Assign Role to User" />
             <br />
             <br />
-            User-Role List:<br />
+            Role :
+            <asp:DropDownList ID="ddlRole" runat="server">
+            </asp:DropDownList>
+&nbsp;
+            <asp:Button ID="btnGetRoleUsers" runat="server" Text="Get User" OnClick="btnGetRoleUsers_Click"  />
+            <br />
+            User-Role List:<br/>
             <asp:ListBox ID="lstUserRole" runat="server"></asp:ListBox>
         </div>
     </form>

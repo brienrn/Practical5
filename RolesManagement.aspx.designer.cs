@@ -11,7 +11,7 @@ namespace Practical5
 {
 
 
-    public partial class RoleManagement
+    public partial class RolesManagement
     {
 
         /// <summary>
@@ -60,13 +60,13 @@ namespace Practical5
         protected global::System.Web.UI.WebControls.ListBox lstUsers;
 
         /// <summary>
-        /// btnAssignRole control.
+        /// btnAssignRoleToUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAssignRole;
+        protected global::System.Web.UI.WebControls.Button btnAssignRoleToUser;
 
         /// <summary>
         /// ddlRole control.
@@ -87,12 +87,12 @@ namespace Practical5
         protected global::System.Web.UI.WebControls.Button btnGetRoleUsers;
 
         /// <summary>
-        /// lstUserRole control.
+        /// lstUsersRoles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstUserRole;
+        protected global::System.Web.UI.WebControls.ListBox lstUsersRoles;
     }
 }
